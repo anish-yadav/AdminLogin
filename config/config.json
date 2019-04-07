@@ -1,0 +1,12 @@
+{
+    "test":{
+    "PORT":3001,
+    "MONGODB_URI":"mongodb://admin:anish1000@ds133256.mlab.com:33256/dashboard",
+    "secret":"Phenomenal"
+    },
+    "development":{
+    "PORT":3001,
+    "MONGODB_URI":"mongodb://admin:anish1000@ds133256.mlab.com:33256/dashboard",
+    "secret":"Phenomenal"
+    }
+}

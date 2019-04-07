@@ -1,0 +1,53 @@
+<%- include('./components/header'); -%>
+<link rel="stylesheet" href="./css/style.css">
+<body>
+<body style="font-size: 40px;">
+    <input style="position:fixed;float:left" id="changeTheme" type="checkbox" checked data-toggle="toggle" data-on="Dark" data-off="Light" data-offstyle="danger">
+    
+    <div class="container text-center" style="padding-top: 2%">
+    
+        <img id="loginImg" src="./img/laugh-regular.svg"   alt="" height="60px" width="60px">
+        <h3 class="text-center" >Login</h3>
+        <% if (error){ %>
+        
+            <p class="danger"> <%= error %></p>
+       
+         <% } %>
+        <div class="row form" >
+            <div class="col-lg-6 col-md-8 col-sm-12 mx-auto">
+                    <form  method="POST">
+                            
+                                    
+                         <input type="text"  id="username" name="username" placeholder="Username" required>
+                        <input type="password"  id="password" placeholder="Password" name= "password" required>
+
+                            
+                            
+                            <button type="submit" class="login " >Login</button>
+                    </form>
+                    <br>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+
+    
+    <script src="./main.js"></script>
+    <script>
+    var passInput = document.getElementById("password");
+var userInput = document.getElementById("username");
+passInput.onfocus = () =>{
+     document.getElementById("loginImg").src = "./img/smile-beam-regular-white.svg";
+    
+}
+
+userInput.onfocus = () => {
+    document.getElementById("loginImg").src = "./img/laugh-regular.svg";
+    
+}
+    </script>
+</body>
+</html>

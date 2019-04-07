@@ -1,0 +1,64 @@
+<%- include('header'); -%>
+
+<body>
+<input style="position:fixed;bottom: 0px;" id="changeTheme" type="checkbox" checked data-toggle="toggle" data-on="Dark" data-off="Light" data-offstyle="danger">
+
+<a style="float:right;font-size:30px;" href="/logout"><i class="fas fa-power-off"></i></a>
+<table class="table table-striped table-dark">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">Date</th>
+        <th scope="col">Download pdf</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% if(docs){ %>
+            <%  var i=1 %>
+        <% docs.forEach((data) =>{ %>
+            
+        <tr>
+            <th scope="row"><%- i++ %></th>
+            <td><%- data.name %></td>
+            <td><%- data.username %></td>
+            <td><%- data.date %></td>
+            <td><a href="<%- data.url %>"><i class="fas fa-arrow-circle-down"></i></a></td>
+            <% if(data.status){ %>
+            <td><i style="color:green;font-size:25px;" class="fas fa-check"></i></td>
+            <% } else { %>
+                <td><i style="color:red;font-size:25px;" class="fas fa-times"></i></td>
+                <% } %>
+        </tr>
+    
+      <% }); %>
+      <% } %>
+    </tbody>
+  </table>
+  <button style="margin-left:95%;margin-top: -3%;" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-plus"></i></button>
+
+
+  <!-- Modal content -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content text-center" style="width:80%;background-color: #191919">
+      <form action="" method="post">
+        <h3 style="color:#fff">Application Info</h3>
+      <input class="modalInput" type="text" name="name" id="" placeholder="Name">
+      <input class="modalInput" type="text" name="username" id="" placeholder="Username"> 
+      <input class="modalInput" type="text" name="url" id="" placeholder="Pdf Url"> 
+      <input class="modalInput" type="date" name="date" id=""> 
+      <input class="modalInput" type="text" name="status" id="" placeholder="True | Flase"> 
+      <button type="submit">Add It</button>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+ 
+<script src="../main.js"></script>
+</body>
+</html>
