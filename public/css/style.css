@@ -49,3 +49,12 @@ p.danger {
 div.modal-content form {
     width:80%;
 }
+
+@media only screen and (max-width: 600px) {
+   #loginImg,h3,button[type="submit"] {
+       margin-left:40%;
+   }
+   #modalForm {
+       margin-left: 10px;
+   }
+  }
